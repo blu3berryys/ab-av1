@@ -12,27 +12,25 @@ jobs:
     env:
       RUST_BACKTRACE: 1
     steps:
-    - run: rustup update stable
-    - uses: actions/checkout@v4
-    - run: cargo test --locked
-    # check print-completions don't fail
-    - run: cargo run --locked -- print-completions bash
-    - run: cargo run --locked -- print-completions fish
-    - run: cargo run --locked -- print-completions zsh
-
-  # Disabled while we no longer need cfg(windows) code
-  # test-windows:
-  #   runs-on: windows-latest
-  #   env:
-  #     RUST_BACKTRACE: 1
-  #   steps:
-  #   - run: rustup update stable
-  #   - uses: actions/checkout@v4
-  #   - run: cargo check
+    - name: Update Rust
+      run: rustup update stable
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Run cargo tests
+      run: cargo test --locked
+    - name: Check print-completions for bash
+      run: cargo run --locked -- print-completions bash
+    - name: Check print-completions for fish
+      run: cargo run --locked -- print-completions fish
+    - name: Check print-completions for zsh
+      run: cargo run --locked -- print-completions zsh
 
   rustfmt:
     runs-on: ubuntu-latest
     steps:
-    - run: rustup update stable
-    - uses: actions/checkout@v4
-    - run: cargo fmt -- --check
+    - name: Update Rust
+      run: rustup update stable
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Run cargo format check
+      run: cargo fmt -- --check
