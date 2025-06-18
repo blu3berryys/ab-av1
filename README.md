@@ -11,7 +11,7 @@ Automatically determine the best crf to deliver the `--min-vmaf` and use it to e
 
 Two phases:
 
-  * [crf-search]() to determine the best --crf value
+  * [crf-search](#command-crf-search) to determine the best --crf value
   * ffmpeg to encode using the settings
 
 <!-- end list -->
@@ -22,7 +22,7 @@ ab-av1 auto-encode [OPTIONS] -i <INPUT> --preset <PRESET> --min-vmaf <MIN_VMAF>
 
 ### Command: crf-search
 
-Interpolated binary search using [sample-encode]() to find the best
+Interpolated binary search using [sample-encode](#command-sample-encode) to find the best
 crf value delivering `--min-vmaf` & `--max-encoded-percent`.
 
 Outputs:
