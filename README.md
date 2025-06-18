@@ -1,5 +1,7 @@
 # ab-av1
 
+![](https://user-images.githubusercontent.com/2331607/151695971-d36f55a7-a157-4d5d-ae06-4cc9e2c0d46f.png "Find the best crf encoding setting for VMAF 95 quality")
+
 AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.
 Uses *ffmpeg*, *svt-av1* & *vmaf*.
 
